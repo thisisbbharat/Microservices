@@ -7,12 +7,12 @@
 </head>
 <body>
     <h1>Simple Frontend</h1>
-    <button onclick="callBackend()">Call Backend API</button>
+    <button id="callBackendButton">Call Backend API</button>
     <p id="response"></p>
 
     <script>
-        function callBackend() {
-            fetch('http://44.223.11.193:8080/api/simple') // Include the protocol (http://)
+        document.getElementById('callBackendButton').addEventListener('click', () => {
+            fetch('http://44.223.11.193:8080/api/simple')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -25,7 +25,7 @@
                 .catch(error => {
                     console.error('There was a problem with the fetch operation:', error);
                 });
-        }
+        });
     </script>
 </body>
 </html>
