@@ -12,7 +12,7 @@
 
     <script>
         function callBackend() {
-            fetch('44.223.11.193:8080/api/simple')
+            fetch('http://44.223.11.193:8080/api/simple') // Include the protocol (http://)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
