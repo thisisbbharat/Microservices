@@ -4,6 +4,8 @@ FROM openjdk:17
 # Set the working directory in the container
 WORKDIR /app
 
+RUN ["mvn" ,"clean","install"]
+
 # Copy the packaged jar file into the container
 COPY target/backend-0.0.1-SNAPSHOT.jar /app/simple-backend.jar
 
